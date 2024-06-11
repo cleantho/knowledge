@@ -1,6 +1,7 @@
+const { mongo } = require('../.env')
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/knowledge_stats')
+mongoose.connect(mongo)
     .then(_ => console.log('\x1b[32m%s', "Conectado ao MongoDB!", '\x1b[0m'))
     .catch(e => {
         const msg = 'ERRO! Não foi possível conectar com o MongoDB!'
