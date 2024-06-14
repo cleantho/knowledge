@@ -14,7 +14,7 @@
     "highlightjs": "^9.16.2",
     "liquor-tree": "^0.2.70",
     "vue": "^3.4.27",
-    "vue-gravatar": "^1.4.1",
+    "@vue-layout/gravatar": "^5.0.1",
     "vue-mq": "^1.0.1",
     "vue-router": "^4.3.2",
     "vue-toasted": "^1.1.28",
