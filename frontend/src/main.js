@@ -1,4 +1,5 @@
 import 'font-awesome/css/font-awesome.css'
+import "./config/bootstrap"
 import { createApp } from 'vue'
 import App from './App'
 
@@ -6,7 +7,10 @@ import router from './config/router'
 import store from './config/store'
 import gravatar from '@vue-layout/gravatar';
 
-import "./config/bootstrap"
+// Autorização temporaria
+import axios from 'axios'
+const bearer = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkNsZWFudGhvIiwiZW1haWwiOiJjbGVhbnRob0BnbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNzE4NDU5NDkwLCJleHAiOjE3MTg3MTg2OTB9.4W8zAPHoTVbnyaIIOjmlCDMJrBeD28liBNI0e5qQzbw"
+axios.defaults.headers.common['Authorization'] = bearer
 
 const app = createApp(App)
 app.use(router)
