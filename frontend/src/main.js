@@ -9,7 +9,7 @@ import gravatar from '@vue-layout/gravatar';
 
 // Autorização temporaria
 import axios from 'axios'
-const bearer = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkNsZWFudGhvIiwiZW1haWwiOiJjbGVhbnRob0BnbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNzE4NDU5NDkwLCJleHAiOjE3MTg3MTg2OTB9.4W8zAPHoTVbnyaIIOjmlCDMJrBeD28liBNI0e5qQzbw"
+const bearer = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkNsZWFudGhvIiwiZW1haWwiOiJjbGVhbnRob0BnbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNzIwMjk2MDEwLCJleHAiOjE3MjA1NTUyMTB9.g00Lx-1-Vh8o-L-WNhtlbnGhuIqIGS0w0oNvC168jHs"
 axios.defaults.headers.common['Authorization'] = bearer
 
 const app = createApp(App)
