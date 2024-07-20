@@ -31,7 +31,10 @@
     </thead>
     <tbody>
       <tr v-for="(obj, index) in datas" :key="index" :class="trStyle(index)">
-        <td v-for="(item, i) in obj" :key="i">{{ item }}</td>
+        <td v-for="(item, i) in obj" :key="i">
+          {{ item }}
+          <slot :name="i" :item="obj"></slot>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -95,8 +98,8 @@ export default {
     },
     trStyle(index) {
       let style = this.hover ? "hover" : "";
-      if (!(index % 2)) {
-        style += this.striped ? " striped" : "";
+      if (this.striped) {
+        style += !(index % 2) ? " striped" : " white";
       }
       return style;
     },
@@ -139,6 +142,9 @@ export default {
 }
 .striped {
   background: rgb(240, 240, 240);
+}
+.white {
+  background: white;
 }
 .hover:hover {
   background: rgb(230, 230, 230);

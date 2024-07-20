@@ -18,7 +18,7 @@
     "@vue-layout/gravatar": "^5.0.1",
     "vue-mq": "^1.0.1",
     "vue-router": "^4.3.2",
-    "vue-toasted": "^1.1.28",
+    "vue3-toastify": "^0.2.2",
     "vue2-editor": "^2.10.3",
     "vuex": "^4.1.0"
   },
