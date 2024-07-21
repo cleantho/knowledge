@@ -192,37 +192,4 @@ export default {
     grid-template-areas: "left" "right";
   }
 }
-.button {
-  color: white;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0px 0px 1px gray;
-}
-.pencil {
-  width: 34px;
-  height: 34px;
-  margin-right: 5px;
-  border-radius: 3px;
-  border: none;
-  background-color: rgb(220, 160, 10);
-}
-.pencil:hover {
-  outline: 3px solid rgb(220, 200, 160);
-  background-color: rgb(220, 180, 60);
-  border-radius: 2px;
-}
-.trash {
-  width: 34px;
-  height: 34px;
-  border-radius: 3px;
-  border: none;
-  background-color: darkred;
-  color: white;
-}
-
-.trash:hover {
-  outline: 3px solid rgb(200, 100, 100);
-  background-color: rgb(200, 64, 64);
-  border-radius: 2px;
-}
 </style>
