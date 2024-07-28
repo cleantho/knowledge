@@ -4,10 +4,10 @@
             sub="Cadastros & Cia" />
         <div class="admin-pages-tabs">
             <ctabs>
-                <ctab title="Artigos">
+                <ctab title="Artigos" active>
                     <ArticleAdmin />
                 </ctab>
-                <ctab title="Categorias" active>
+                <ctab title="Categorias">
                     <CategoryAdmin />
                 </ctab>
                 <ctab title="Usuários">

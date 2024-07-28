@@ -10,7 +10,7 @@
           v-model="category.name"
           required
           :disabled="mode === 'remove'"
-          placeholder="Informe o Nome do Categoria..."
+          placeholder="Informe o Nome da Categoria..."
         />
       </div>
       <div class="m-2 mt-4 colunm">
