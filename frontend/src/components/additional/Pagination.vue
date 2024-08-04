@@ -142,7 +142,7 @@ export default {
     },
   },
   watch: {
-    perPage() {
+    totalRows() {
       this.pages = Math.ceil(this.totalRows / this.perPage);
     },
   },
