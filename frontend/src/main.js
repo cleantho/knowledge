@@ -10,7 +10,7 @@ import toasted from './config/msgs'
 
 // Autorização temporaria
 import axios from 'axios'
-const bearer = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkNsZWFudGhvIiwiZW1haWwiOiJjbGVhbnRob0BnbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNzIyMTk5MDIwLCJleHAiOjE3MjI0NTgyMjB9.WxkvyU9JAZQWDUUT5jQ5JfQikkQGS-D-_Fh-rlbrnR4"
+const bearer = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkNsZWFudGhvIiwiZW1haWwiOiJjbGVhbnRob0BnbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNzIyNzA2MjA2LCJleHAiOjE3MjI5NjU0MDZ9.dx4iEwP79ACirSOtsTpOaubUaJfpx34LnObaDzFfqWI"
 axios.defaults.headers.common['Authorization'] = bearer
 
 const app = createApp(App)

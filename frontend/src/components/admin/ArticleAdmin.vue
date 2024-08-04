@@ -90,12 +90,14 @@
         </button>
       </template>
     </ctable>
+    <cpagination size="md" v-model="page" :totalRows="count" :perPage="limit" />
   </div>
 </template>
 
 <script>
 import { VueEditor } from "vue3-editor";
 import ctable from "../additional/Table";
+import cpagination from "../additional/Pagination";
 import { baseApiUrl, showError } from "@/global";
 import axios from "axios";
 
@@ -103,6 +105,7 @@ export default {
   name: "ArticleAdmin",
   components: {
     ctable,
+    cpagination,
     VueEditor,
   },
   data: function () {
@@ -180,6 +183,11 @@ export default {
         .get(`${baseApiUrl}/articles/${article.id}`)
         .then((res) => (this.article = res.data))
         .catch((e) => showError(this.toasted, e));
+    },
+  },
+  watch: {
+    page() {
+      this.loadArticles();
     },
   },
   mounted() {
