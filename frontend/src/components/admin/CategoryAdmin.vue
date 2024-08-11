@@ -116,6 +116,7 @@ export default {
         .then(() => {
           this.toasted.defaultSuccess();
           this.reset();
+          this.$store.commit('updateMenu')
         })
         .catch((e) => showError(this.toasted, e));
     },
