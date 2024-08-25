@@ -1,4 +1,5 @@
 export const baseApiUrl = 'http://localhost:3000'
+export const userKey = 'knowledge-user'
 
 export function showError(toast, e) {        
     if (e && e.response && e.response.data) {
@@ -10,4 +11,4 @@ export function showError(toast, e) {
     }
 }
 
-export default { baseApiUrl, showError }
+export default { baseApiUrl, showError, userKey }
