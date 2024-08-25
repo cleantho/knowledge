@@ -11,17 +11,25 @@
             <router-link to="/admin">
                 <i class="fa fa-cogs"></i> Administração
             </router-link>
-            <a href="logout"><i class="fa fa-sign-out"></i> Sair</a>
+            <a href @click.prevent="logout"><i class="fa fa-sign-out"></i> Sair</a>
         </div>
     </div>
 </template>
 
 <script>
+import { userKey } from '@/global'
 import { mapState } from 'vuex'
 
 export default {
     name: 'UserDropdown',    
-    computed: mapState(['user']),    
+    computed: mapState(['user']), 
+    methods: {
+        logout() {
+            localStorage.removeItem(userKey)
+            this.$store.commit('setUser', null)
+            this.$router.push({ name: 'auth'})
+        }
+    }   
 }
 </script>
 
