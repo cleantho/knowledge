@@ -23,7 +23,7 @@ export default {
   components: {
     ctree,
   },
-  computed: mapState(["isMenuVisible", "updateCategory"]),
+  computed: mapState(["isMenuVisible"]),
   data() {
     return {
       treeFilter: "",
@@ -37,11 +37,6 @@ export default {
         },
       },
     };
-  },
-  watch: {
-    updateCategory() {
-      this.getTreeData();
-    },
   },
   methods: {
     async getTreeData() {

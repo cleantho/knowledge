@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 export default new Vuex.Store({
     state: {
         isMenuVisible: true,
-        updateCategory: true,
         user: {
             name: 'Mock user',
             email: 'mock@gmail.com'
@@ -18,8 +17,5 @@ export default new Vuex.Store({
             }
             // console.log("toggle: ", state.isMenuVisible)
         },
-        updateMenu(state){
-            state.updateCategory = !state.updateCategory;
-        }
     }
 })
