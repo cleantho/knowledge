@@ -54,8 +54,8 @@
         <label for="article-content">Conteúdo:</label>
         <VueEditor
           v-model="article.content"
-          name="article - content"
-          id="article - content"
+          name="article-content"
+          id="article-content"
           placeholder="Informe o Conteúdo do Artigo..."
         />
       </div>
@@ -133,7 +133,7 @@ export default {
         this.articles = res.data.data;
         this.count = res.data.count;
         this.limit = res.data.limit;
-      });
+      }).catch((e) => showError(this.toasted, e));
     },
     loadCategories() {
       const url = `${baseApiUrl}/categories`;
@@ -141,7 +141,7 @@ export default {
         this.categories = res.data.map((category) => {
           return { value: category.id, text: category.path };
         });
-      });
+      }).catch((e) => showError(this.toasted, e));
     },
     loadUsers() {
       const url = `${baseApiUrl}/users`;
@@ -149,7 +149,7 @@ export default {
         this.users = res.data.map((user) => {
           return { value: user.id, text: `${user.name} - ${user.email}` };
         });
-      });
+      }).catch((e) => showError(this.toasted, e));
     },
     reset() {
       this.mode = "save";

@@ -99,9 +99,12 @@ export default {
   methods: {
     loadCategories() {
       const url = `${baseApiUrl}/categories`;
-      axios.get(url).then((res) => {
-        this.categories = res.data;
-      });
+      axios
+        .get(url)
+        .then((res) => {
+          this.categories = res.data;
+        })
+        .catch((e) => showError(this.toasted, e));
     },
     reset() {
       this.mode = "save";
@@ -127,6 +130,7 @@ export default {
         .then(() => {
           this.toasted.defaultSuccess();
           this.reset();
+          this.$store.commit('updateMenu')
         })
         .catch((e) => showError(this.toasted, e));
     },

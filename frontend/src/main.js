@@ -1,5 +1,6 @@
 import 'font-awesome/css/font-awesome.css'
-import "./config/bootstrap"
+import './config/bootstrap'
+import './config/axios'
 import { createApp } from 'vue'
 import App from './App'
 

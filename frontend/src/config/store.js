@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 export default new Vuex.Store({
     state: {
         isMenuVisible: false,
+        updateCategory: true,
         user: null
     },
     mutations: {
@@ -17,6 +18,9 @@ export default new Vuex.Store({
             } else {
                 state.isMenuVisible = isVisible
             }            
+        },
+        updateMenu(state){
+            state.updateCategory = !state.updateCategory;
         },
         setUser(state, user) {
             state.user = user

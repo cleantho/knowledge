@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { baseApiUrl } from "@/global";
+import { baseApiUrl, showError } from "@/global";
 import axios from "axios";
 import PageTitle from "../template/PageTitle";
 import ArticleItem from "./ArticleItem";
@@ -38,17 +38,21 @@ export default {
   methods: {
     getCategory() {
       const url = `${baseApiUrl}/categories/${this.category.id}`;
-      axios(url).then((res) => (this.category = res.data));
+      axios(url)
+        .then((res) => (this.category = res.data))
+        .catch((e) => showError(this.toasted, e));
     },
     getArticles() {
       const url = `${baseApiUrl}/categories/${this.category.id}/articles?page=${this.page}`;
-      axios(url).then((res) => {
-        this.articles = this.articles.concat(res.data);
-        this.page++;
-        if (res.data.length === 0) {
-          this.loadMore = false;
-        }
-      });
+      axios(url)
+        .then((res) => {
+          this.articles = this.articles.concat(res.data);
+          this.page++;
+          if (res.data.length === 0) {
+            this.loadMore = false;
+          }
+        })
+        .catch((e) => showError(this.toasted, e));
     },
   },
   watch: {

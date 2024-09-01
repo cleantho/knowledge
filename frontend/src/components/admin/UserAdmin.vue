@@ -123,9 +123,12 @@ export default {
   methods: {
     loadUsers() {
       const url = `${baseApiUrl}/users`;
-      axios.get(url).then((res) => {
-        this.users = res.data;
-      });
+      axios
+        .get(url)
+        .then((res) => {
+          this.users = res.data;
+        })
+        .catch((e) => showError(this.toasted, e));
     },
     reset() {
       this.mode = "save";

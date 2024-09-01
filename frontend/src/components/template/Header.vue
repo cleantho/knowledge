@@ -4,7 +4,8 @@
             <i class="fa fa-lg" :class="icon"></i>
         </a>
         <h1 class="title">
-            <router-link to="/">{{ title }}</router-link>
+            <router-link to="/" v-if="user">{{ title }}</router-link>
+            <div v-else>{{ title }}</div>
         </h1>
         <UserDropdown v-if="!hideUserDropdown" />
     </header>
@@ -12,6 +13,7 @@
 
 <script>
 import UserDropdown from './UserDropdown'
+import { mapState } from 'vuex'
 
 export default {
     name: 'HeaderVue',
@@ -22,6 +24,7 @@ export default {
         hideUserDropdown: Boolean
     },
     computed: {
+        ...mapState(["user"]),
         icon() {
             return this.$store.state.isMenuVisible ? "fa-angle-left" : "fa-angle-down"
         }

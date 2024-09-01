@@ -6,6 +6,7 @@
         type="text"
         placeholder="Digite para filtrar..."
         v-model="treeFilter"
+        name="filter"        
       />
     </div>
     <ctree :data="treeData" :filter="treeFilter" :options="treeOptions" />
@@ -23,7 +24,7 @@ export default {
   components: {
     ctree,
   },
-  computed: mapState(["isMenuVisible"]),
+  computed: mapState(["isMenuVisible", "updateCategory"]),
   data() {
     return {
       treeFilter: "",
@@ -37,6 +38,11 @@ export default {
         },
       },
     };
+  },
+  watch: {
+    updateCategory() {
+      this.getTreeData();
+    },
   },
   methods: {
     async getTreeData() {

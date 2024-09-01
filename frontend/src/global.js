@@ -1,5 +1,6 @@
 export const baseApiUrl = 'http://localhost:3000'
 export const userKey = 'knowledge-user'
+export const normalExit = 'normal-exit'
 
 export function showError(toast, e) {        
     if (e && e.response && e.response.data) {

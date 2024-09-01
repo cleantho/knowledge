@@ -16,6 +16,7 @@
         name="email"
         type="text"
         placeholder="E-mail"
+        autocomplete="on"
       />
       <input
         v-model="user.password"
@@ -42,7 +43,7 @@
 </template>
 
 <script>
-import { baseApiUrl, showError, userKey } from "@/global";
+import { baseApiUrl, showError, userKey, normalExit } from "@/global";
 import axios from "axios";
 
 export default {
@@ -59,6 +60,7 @@ export default {
         .post(`${baseApiUrl}/signin`, this.user)
         .then((res) => {
           this.$store.commit("setUser", res.data);
+          localStorage.setItem(normalExit, true);
           localStorage.setItem(userKey, JSON.stringify(res.data));
           this.$router.push({ path: "/" });
         })
@@ -74,6 +76,12 @@ export default {
         })
         .catch((e) => showError(this.toasted, e));
     },
+  },
+  mounted() {
+    if (localStorage.getItem(normalExit) === "false") {
+      this.toasted.defaultError("Usuário não autorizado!");
+    }
+    localStorage.removeItem(normalExit);
   },
 };
 </script>

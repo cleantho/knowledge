@@ -12,7 +12,7 @@
 <script>
 import "highlightjs/styles/vs2015.css";
 import hljs from "highlightjs/highlight.pack.js";
-import { baseApiUrl } from "@/global";
+import { baseApiUrl, showError } from "@/global";
 import axios from "axios";
 import PageTitle from "../template/PageTitle";
 
@@ -26,7 +26,10 @@ export default {
   },
   mounted() {
     const url = `${baseApiUrl}/articles/${this.$route.params.id}`;
-    axios.get(url).then((res) => (this.article = res.data));
+    axios
+      .get(url)
+      .then((res) => (this.article = res.data))
+      .catch((e) => showError(this.toasted, e));
   },
   updated() {
     document.querySelectorAll(".article-content pre.ql-syntax").forEach((e) => {

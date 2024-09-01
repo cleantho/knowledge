@@ -17,7 +17,7 @@
 import PageTitle from '../template/PageTitle'
 import Stat from './Stat'
 import axios from 'axios'
-import { baseApiUrl } from '@/global'
+import { baseApiUrl, showError } from '@/global'
 
 export default {
     name: 'HomeVue',
@@ -29,7 +29,9 @@ export default {
     },
     methods: {
         getStats() {
-            axios.get(`${baseApiUrl}/stats`).then(res => this.stat = res.data)
+            axios.get(`${baseApiUrl}/stats`)
+                .then(res => this.stat = res.data)
+                .catch((e) => showError(this.toasted, e))
         }
     },
     mounted() {
